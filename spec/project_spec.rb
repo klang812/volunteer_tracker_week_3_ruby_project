@@ -11,11 +11,12 @@ describe '#Project' do
     end
   end
 
-#   context '#id' do
-#     it 'returns the id of the project before saving project' do
-#       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-#       expect(project.id).to eq nil
-#     end
+  context '#id' do
+    it 'returns the id of the project before saving project' do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      expect(project.id).to(eq(nil))
+    end
+  end
 
 #     it 'returns the id of the project after saving project' do
 #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
@@ -24,34 +25,34 @@ describe '#Project' do
 #     end
 #   end
 
-#   describe '#==' do
-#     it 'is the same project if two projects have the same title' do
-#       project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-#       project2 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-#       expect(project1 == project2).to eq true
-#     end
-#   end
+  # describe('#==') do
+  #   it 'is the same project if two projects have the same title' do
+  #     project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+  #     project2 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+  #     expect(project1 == project2).to(eq(true))
+  #   end
+  # end
 
-  context '.all' do
+  context('.all') do
     it 'is empty to start' do
-      expect(Project.all).to eq []
+      expect(Project.all).to(eq([]))
     end
   end
 
-#     it 'returns all projects' do
-#       project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-#       project1.save
-#       project2 = Project.new({:title => 'Teaching Ruby to Kids', :id => nil})
-#       project2.save
-#       expect(Project.all).to eq [project1, project2]
-#     end
-#   end
+  #   it 'returns all projects' do
+  #     project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+  #     project1.save
+  #     project2 = Project.new({:title => 'Teaching Ruby to Kids', :id => nil})
+  #     project2.save
+  #     expect(Project.all).to eq [project1, project2]
+  #   end
+  # end
 
   # describe('#save') do
   #   it 'saves a project to the database' do
   #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
   #     project.save
-  #     expect(Project.all).to eq [project]
+  #     expect(Project.all).to(eq([project]))
   #   end
   # end
 

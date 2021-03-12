@@ -22,11 +22,8 @@ attr_accessor :title
     titles
   end
 
-
-  # def save
-  #   result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
-  #   @id = result.first().fetch("id")
-  # end
-
+  def id
+    DB.exec("SELECT id FROM projects WHERE id = #{@id};").first()["id"]
+  end
 
 end
