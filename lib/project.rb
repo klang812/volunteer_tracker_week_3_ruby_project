@@ -28,4 +28,16 @@ attr_accessor :title
     # DB.exec("SELECT id FROM projects WHERE id = #{@id};").first()["id"]
   end
 
+  def ==(projects_to_compare)
+    if projects_to_compare != nil
+      self.title() == projects_to_compare.title()
+    else
+      nil
+    end
+  end
+
+  # def save
+  #   DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+  #   # @id = result.first()["id"]
+  # end
 end
