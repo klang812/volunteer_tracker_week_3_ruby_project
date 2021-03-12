@@ -8,6 +8,7 @@ attr_accessor :title
   end
 
   def title
+    DB.exec("INSERT INTO projects (title) VALUES ('#{@title}');")
     DB.exec("SELECT title FROM projects WHERE title = '#{@title}';").first()["title"]
   end
 
@@ -23,7 +24,8 @@ attr_accessor :title
   end
 
   def id
-    DB.exec("SELECT id FROM projects WHERE id = #{@id};").first()["id"]
+    # DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    # DB.exec("SELECT id FROM projects WHERE id = #{@id};").first()["id"]
   end
 
 end
