@@ -24,8 +24,7 @@ attr_accessor :title
   end
 
   def id
-    # DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
-    # DB.exec("SELECT id FROM projects WHERE id = #{@id};").first()["id"]
+    
   end
 
   def ==(projects_to_compare)
@@ -40,5 +39,5 @@ attr_accessor :title
     DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
   end
 
-  
+
 end
