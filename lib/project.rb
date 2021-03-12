@@ -8,8 +8,10 @@ attr_accessor :title
   end
 
   def title
-    DB.exec("SELECT * FROM projects WHERE title = #{@title};").first()
+    DB.exec("SELECT title FROM projects WHERE title = '#{@title}';").first()["title"]
   end
+
+  
 
 
 end
