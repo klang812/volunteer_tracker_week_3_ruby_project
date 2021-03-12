@@ -45,4 +45,9 @@ attr_accessor :title
       nil
     end
   end
+
+  def delete
+    DB.exec("DELETE FROM projects WHERE id = #{@id};")
+  end
+
 end
