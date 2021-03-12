@@ -36,8 +36,9 @@ attr_accessor :title
     end
   end
 
-  # def save
-  #   DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
-  #   # @id = result.first()["id"]
-  # end
+  def save
+    DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+  end
+
+  
 end
