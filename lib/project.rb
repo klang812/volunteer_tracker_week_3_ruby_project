@@ -8,7 +8,6 @@ attr_accessor :title
   end
 
   def title
-    DB.exec("INSERT INTO projects (title) VALUES ('#{@title}');")
     DB.exec("SELECT title FROM projects WHERE title = '#{@title}';").first()["title"]
   end
 
@@ -16,27 +15,24 @@ attr_accessor :title
     all_titles = DB.exec("SELECT * FROM projects;")
     titles = []
     all_titles.each do |new_title|
-      id = new_title["id"]
+      id = new_title["id"].to_i
       title = new_title["title"]
-      titles.push(Project.new({:title => title, :id => nil}))
+      titles.push(Project.new({:title => title, :id => id}))
     end
     titles
   end
 
-  def id
-    
-  end
-
   def ==(projects_to_compare)
     if projects_to_compare != nil
-      self.title() == projects_to_compare.title()
+      self.id() == projects_to_compare.id()
     else
-      nil
+      false
     end
   end
 
   def save
-    DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    @id = result.first().fetch("id").to_i
   end
 
 
