@@ -35,5 +35,14 @@ attr_accessor :title
     @id = result.first().fetch("id").to_i
   end
 
-
+  def self.find(id)
+    project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first()
+    if project != nil
+      title = project["title"]
+      id = project["id"].to_i
+      Project.new({:title => title, :id => id})
+    else
+      nil
+    end
+  end
 end
