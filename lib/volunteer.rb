@@ -8,8 +8,12 @@ class Volunteer
     @id = attributes[:id]
   end
 
-  # def name
-  #   DB.exec("SELECT name FROM volunteers WHERE name = '#{@name}';").first()["name"]
-  # end
+  def ==(volunteers_to_compare)
+    if volunteers_to_compare != nil
+      self.id() == volunteers_to_compare.id()
+    else
+      false
+    end
+  end
 
 end
