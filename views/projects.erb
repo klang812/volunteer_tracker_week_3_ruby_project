@@ -1,0 +1,19 @@
+<h1>Let us know what kind of project you would like to create!</h1>
+
+<form action="/projects" method="post">
+  <div class="form-group">
+    <label for="title" >Project name</label>
+    <input id="n" name="title" class="form-control" type="text" required>
+  </div>
+  <button type="submit" class="btn">Create Project</button>
+</form>
+
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%= project.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no projects to display.</p>
+<% end %>
