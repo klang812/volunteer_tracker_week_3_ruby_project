@@ -55,4 +55,18 @@ attr_accessor :title
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
   end
 
+  def volunteers
+    project_volunteers = []
+    results = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id};")
+    results.each do |result|
+      name = result.fetch("name")
+      project_id = result.fetch("project_id").to_i
+      id = result.fetch("id").to_i
+      project_volunteers.push(Volunteer.new(name: name, project_id: project_id, id: id))
+    end
+    project_volunteers
+  end
 end
+      
+    
+  
