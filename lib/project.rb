@@ -47,9 +47,8 @@ attr_accessor :title
   end
 
   def update(title)
-    @title = title
+    @title = title[:title]
     DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
-    
   end
   
   def delete
