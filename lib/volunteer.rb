@@ -8,8 +8,8 @@ class Volunteer
     @id = attributes[:id]
   end
 
-  def name
-    DB.exec("SELECT name FROM volunteers WHERE name = '#{@name}';").first()["name"]
-  end
+  # def name
+  #   DB.exec("SELECT name FROM volunteers WHERE name = '#{@name}';").first()["name"]
+  # end
 
 end
