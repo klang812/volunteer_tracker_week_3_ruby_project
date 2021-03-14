@@ -1,3 +1,5 @@
+<h1>If you would like to edit your name please do so here</h1>
+
 <form action="/volunteers/<%= @volunteer.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
 
@@ -5,3 +7,11 @@
   <input id="name" name="name" type="text" required>
   <button type="submit">Update Volunteer</button>
 </form>
+
+<form action="/volunteers/<%= @volunteer.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete a volunteer</button>
+</form>
+
+<p><a href="/projects">Return to project list</a></p>
