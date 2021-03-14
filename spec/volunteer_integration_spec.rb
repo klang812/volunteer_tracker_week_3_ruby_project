@@ -43,7 +43,6 @@ describe 'the project delete path', {:type => :feature} do
     visit "/projects/#{id}/edit"
     click_button('Delete Project')
     visit '/'
-    save_and_open_page
     expect(page).not_to have_content("Teaching Kids to Code")
   end
 end
@@ -59,8 +58,13 @@ end
 #     test_volunteer.save
 #     visit "/projects/#{project_id}"
 #     click_link('Jasmine')
+    
 #     fill_in('name', :with => 'Jane')
+
 #     click_button('Update Volunteer')
+#     save_and_open_page
+
 #     expect(page).to have_content('Jane')
+    
 #   end
 # end

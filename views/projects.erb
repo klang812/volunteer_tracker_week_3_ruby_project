@@ -17,3 +17,13 @@
 <% else %>
   <p>There are currently no projects to display.</p>
 <% end %>
+
+<form action="/volunteers" method="post">
+  
+    <label for="name" >Volunteer name</label>
+    <input id="name" name="name" class="form-control" type="text" required><br>
+    <label for="project_id" >Project ID</label>
+    <input id="project_id" name="project_id" class="form-control" type="text" required>
+  
+  <button type="submit" class="btn">Add Volunteer</button>
+</form>

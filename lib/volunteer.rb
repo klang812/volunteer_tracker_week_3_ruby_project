@@ -44,4 +44,9 @@ class Volunteer
       nil
     end
   end
+
+  def update(name)
+    @name = name[:name]
+    DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
+  end
 end
