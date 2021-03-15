@@ -53,8 +53,9 @@ class Volunteer
         project_id = volunteer["project_id"]
         id = volunteer["id"].to_i
         new_volunteers.push(Volunteer.new({:name => name, :project_id => project_id, :id => id}))
-      end
+    end
     new_volunteers
+    
   end
 
   def update(name)

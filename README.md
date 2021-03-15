@@ -11,10 +11,11 @@
 * _RSpec 3.10_
 * _pry 0.14.0_
 * _Sinatra_
+* _Postresql_
 
 
 ## Description
-_This application is a volunteer tracker for projects.  You can add/edit/delete projects and volunteers.  Please follow the directions below for installation and setup._
+_This application is a volunteer tracker for projects.  You can add/edit/delete projects and volunteers utlilizing a one to many relationship.  Please follow the directions below for installation and setup._
 
 ## Setup/Installation Requirements
 
