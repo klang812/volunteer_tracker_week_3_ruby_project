@@ -29,7 +29,7 @@ end
 
 get('/projects/:id') do
   @project = Project.find(params[:id].to_i())
-  @volunteers = Volunteer.all()
+  @volunteers = Volunteer.find_volunteers_by_project_id(@project.id)
   erb(:project)
 end
 
@@ -58,6 +58,7 @@ get('/volunteers/:id') do
 end
 
 get('/volunteers') do
+  @volunteers = Volunteer.all()
   erb(:volunteers)
 end
 
@@ -77,12 +78,12 @@ post('/projects/:id/volunteers') do
   erb(:projects)
 end
 
-# delete('/volunteers/:id') do
-#   @volunteer = Volunteer.find(params[:id].to_i())
-#   @volunteer.delete()
-#   @volunteers = Volunteer.all()
-#   erb(:edit_volunteer)
-# end
+delete('/volunteers/:id') do
+  @volunteer = Volunteer.find(params[:id].to_i())
+  @volunteer.delete()
+  @projects = Project.all()
+  erb(:projects)
+end
 
 
 
